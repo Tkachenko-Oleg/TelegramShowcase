@@ -1,8 +1,7 @@
 __pycache__/
 .venv/
 .idea/
-brand/
-catalog/
 .env
 *.log
 *.pyc
+*.png

@@ -19,16 +19,8 @@ logging.basicConfig(
 
 async def send_error_to_admin(error_message):
     try:
-        error_data = error_message.split(" - ")
-        error_text = (
-            f"Error!\n"
-            f"Time:  {error_data[0]}\n"
-            f"Name:  {error_data[1]}\n"
-            f"Level:  {error_data[2]}\n"
-            f"Message:  {error_data[3]}"
-        )
         for admin_id in Config.ADMIN_IDS:
-            await bot.send_message(chat_id=admin_id, text=error_text)
+            await bot.send_message(chat_id=admin_id, text=error_message)
     except Exception as error:
         logging.error(f"An unexpected error occurred while sending the report: {error}")
 
