@@ -8,5 +8,7 @@ add a your logo.png in app/images/brand
 
 run a install.sh
 
+create a .env
+
 run a run.sh
 
