@@ -16,5 +16,4 @@ class Config:
     MAIL_LINK = environ.get("MAIL_LINK")
     WHATSAPP_LINK = environ.get("WHATSAPP_LINK")
     VK_LINK = environ.get("VK_LINK")
-    PHONE_NUMBER = environ.get("PHONE_NUMBER")
     ADMIN_IDS = environ.get("ADMIN_IDS").split(", ")

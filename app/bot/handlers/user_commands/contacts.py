@@ -18,7 +18,6 @@ async def contacts_handler(callback: CallbackQuery):
             f"Наш WhatsApp: [ссылка]({Config.WHATSAPP_LINK})\n"
             f"Наш VK: [ссылка]({Config.VK_LINK})\n"
             f"Наша почта: {Config.MAIL_LINK}\n"
-            f"Наш номер телефона: {Config.PHONE_NUMBER}"
         )
         img = FSInputFile("app/images/brand/logo.png")
         await callback.message.edit_media(
