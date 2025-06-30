@@ -1,0 +1,8 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/TelegramBot/app
+    restart: always
