@@ -6,6 +6,7 @@ from app.config import Config
 
 import logging
 
+
 router_contacts = Router()
 
 

@@ -17,3 +17,8 @@ class Config:
     WHATSAPP_LINK = environ.get("WHATSAPP_LINK")
     VK_LINK = environ.get("VK_LINK")
     ADMIN_IDS = environ.get("ADMIN_IDS").split(", ")
+    POSTGRES_DB = environ.get("POSTGRES_DB")
+    POSTGRES_USER = environ.get("POSTGRES_USER")
+    POSTGRES_PASSWORD = environ.get("POSTGRES_PASSWORD")
+    POSTGRES_HOST = environ.get("POSTGRES_HOST")
+    POSTGRES_PORT = environ.get("POSTGRES_PORT")

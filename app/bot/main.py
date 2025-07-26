@@ -1,19 +1,30 @@
 from aiogram import Bot, Dispatcher
 from cprint import cprint
-import asyncio
+from logging.handlers import TimedRotatingFileHandler
 import logging
+import asyncio
 
 from app.config import Config
 from app.bot.handlers import *
+from app.db.create_db import database
 
 
 bot = Bot(token=Config.BOT_TOKEN)
 dp = Dispatcher()
+database.create_category_table()
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename="logger.log",
-    filemode='w'
+    handlers=[
+        TimedRotatingFileHandler(
+            filename='logger.log',
+            when='D',
+            interval=1,
+            backupCount=7,
+            utc=True
+        )
+    ]
 )
 
 
@@ -52,7 +63,8 @@ async def start_bot():
             router_catalog,
             router_admin,
             router_change_info,
-            router_admin_catalog
+            router_admin_catalog,
+            router_get_statistic
         )
         asyncio.create_task(monitor_log_file())
         await dp.start_polling(bot, skip_updates=True)

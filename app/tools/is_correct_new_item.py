@@ -1,4 +1,4 @@
-from json import load, dump
+from json import load
 
 
 def is_correct_item(category: str, new_element_path: str):

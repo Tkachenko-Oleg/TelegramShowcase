@@ -4,6 +4,7 @@ from aiogram.fsm.context import FSMContext
 
 from app.tools import change_image, correct_page
 from app.bot.keyboards import catalog_keyboard, viewer_keyboard
+from app.db.create_db import database
 
 import logging
 
@@ -28,6 +29,7 @@ async def catalog_handler(callback: CallbackQuery):
 @router_catalog.callback_query(lambda callback: callback.data.startswith("category_"))
 async def viewer_handler(callback: CallbackQuery, state: FSMContext):
     try:
+        database.register_category(usr_id=callback.from_user.id, category=callback.data)
         data = {
             "category": callback.data,
             "page": 1

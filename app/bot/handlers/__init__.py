@@ -7,3 +7,4 @@ from .user_commands.catalog import router_catalog
 from .admin_commands.admin_panel import router_admin
 from .admin_commands.change_info import router_change_info
 from .admin_commands.change_catalog import router_admin_catalog
+from .admin_commands.get_statistic import router_get_statistic
