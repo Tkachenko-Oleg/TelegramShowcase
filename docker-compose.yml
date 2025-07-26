@@ -17,10 +17,14 @@ services:
   db:
     image: postgres:17.5
     container_name: db_postgres
+    environment:
+        POSTGRES_DB: ${POSTGRES_DB}
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "YourUser", "-d", "YourDB"]
+      test: ["CMD", "pg_isready", "-U", "YourName", "-d", "YourDB"]
       interval: 5s
       timeout: 5s
       retries: 5
